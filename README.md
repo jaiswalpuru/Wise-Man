@@ -1,2 +1,2 @@
-# dsicord_bots
+# discord_bots
 Discord bots
