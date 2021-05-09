@@ -24,5 +24,5 @@ async def on_message(message):
     if message.content.startswith('$inspire'):
         await message.channel.send(return_motivation())
 
-client.run(os.getenv("TOKEN","ODQwOTE5MzE5MzQ5NDI4MjI0.YJfNJQ.NrDgrp_TDp2uvJ0tXQ8za7MMMn4"))
+client.run(os.getenv("TOKEN"))
 
