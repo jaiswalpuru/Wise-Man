@@ -1,3 +1,3 @@
 ### Adapters
 
-• This will contains all third party API calls
+* Contains all third party API calls
