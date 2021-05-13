@@ -1,2 +1,2 @@
-# discord_bots
+# discord_bots (WIP)
 Discord bots
