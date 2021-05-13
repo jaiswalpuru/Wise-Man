@@ -1,17 +1,24 @@
 import discord
 import os
 import logging
+import random
 
 from dotenv.main import dotenv_values
 
 from adapters.quotes import return_motivation
-from internal.enums import Enums, Internal_Error
+from internal.enums import Enums, Internal_Error, Games
 
 intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents,command_prefix='$')
 
 config = dotenv_values(".env")
+
+@client.event
+async def on_ready():
+    print("We have logged in as {0.user}".format(client))
+    random_game = random.choice(Games)
+    await client.change_presence(activity = discord.Game(random_game))
 
 @client.event
 async def on_member_join(member):
@@ -22,11 +29,6 @@ async def on_member_join(member):
 async def on_member_remove(member):
     channel = member.guild.get_channel(config.get(Enums.tc_id.value))
     await channel.send("hope {0} had fun.".format(member.name))
-
-
-@client.event
-async def on_ready():
-    print("We have logged in as {0.user}".format(client))
 
 @client.event
 async def on_message(message):
