@@ -1,6 +1,6 @@
 # GOAT
 <p align="center">
-    <img src="https://github.com/jaiswalpuru/discord_bots/blob/main/wise_man/images/guru.png" alt="Logo" width="400" height="200" style="border-radius:10%">
+    <img src="https://github.com/jaiswalpuru/discord_bots/blob/main/wise_man/images/goat.png" alt="Logo" width="400" height="200" style="border-radius:10%">
 </p>
 
 <!-- GETTING STARTED -->
