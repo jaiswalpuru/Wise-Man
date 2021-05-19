@@ -5,6 +5,7 @@ import random
 
 from dotenv.main import dotenv_values
 
+from internal.helper import check_language
 from adapters.quotes import return_motivation
 from internal.enums import Enums, Internal_Error, Games
 
@@ -32,15 +33,19 @@ async def on_member_remove(member):
 
 @client.event
 async def on_message(message):
+    
+    #to avoid recursion
     if message.author == client.user:
         return
     
-    message.content = message.content.replace(" ", "")
+    #message function map
     switch = {
         message.content.startswith('$inspire') : return_motivation,
+        message.content.startswith('$comp') : check_language,
     }
+
     try:
-        await message.channel.send(switch.get(message.content.startswith(message.content))())
+        await message.channel.send(switch.get(message.content.startswith(message.content))(message.content))
     except:
         logging.warning(Internal_Error.NOT_DEFINED.value)
 
