@@ -39,7 +39,7 @@
 
 ### Run 
 ```sh
-   python3 guru.py
+   python3 goat.py
    ```
 
 <!-- ROADMAP -->
