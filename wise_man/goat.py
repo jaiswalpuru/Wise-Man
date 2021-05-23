@@ -41,7 +41,7 @@ async def on_message(message):
     #message function map
     switch = {
         message.content.startswith('$inspire') : return_motivation,
-        message.content.startswith('$comp') : check_language,
+        message.content.startswith('$com') : check_language,
     }
 
     try:
